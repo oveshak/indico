@@ -1,0 +1,174 @@
+{% extends "base.html" %} 
+{% load static %} 
+{% block title %}
+<title>Indico | Construction & Building HTML Template</title>
+{% endblock title %}
+
+{% block css_file %}
+{% include "indico/css.html" %}
+{% endblock css_file %}
+{% block content %}
+<div class="site-preloader-wrap">
+  <div class="spinner"></div>
+</div>
+{% include "indico/header.html" %}
+
+<div id="main-slider" class="dl-slider">
+
+    {% for slider in sliders.slider_item.all %}
+    <div class="single-slide">
+        <div
+          class="bg-img kenburns-top-right"
+          style="background-image: url({{slider.image.url}})"
+        ></div>
+        <div class="overlay"></div>
+        <div class="slider-content-wrap d-flex align-items-center  {% if slider.pk == 1 %}
+        text-left
+    {% elif slider.pk == 2 %}
+        text-center
+    {% else %}
+        text-right
+    {% endif %}">
+          <div class="container">
+            <div class="slider-content">
+              <div class="dl-caption medium">
+                <div class="inner-layer">
+                  <div data-animation="fade-in-right" data-delay="1s">
+                    {{slider.greating_text}}
+                  </div>
+                </div>
+              </div>
+              <div class="dl-caption big">
+                <div class="inner-layer">
+                  <div data-animation="fade-in-left" data-delay="2s">
+                    {{slider.title}}
+                  </div>
+                </div>
+              </div>
+              <div class="dl-caption big">
+                <div class="inner-layer">
+                  <div data-animation="fade-in-left" data-delay="2.5s">
+                    construction services.
+                  </div>
+                </div>
+              </div>
+              <div class="dl-caption small">
+                <div class="inner-layer">
+                  <div data-animation="fade-in-left" data-delay="3s">
+                    {{slider.descriptions}}
+                  </div>
+                </div>
+              </div>
+              <div class="dl-btn-group">
+                <div class="inner-layer">
+                  <a
+                    href="{{slider.button_one}}"
+                    class="dl-btn"
+                    data-animation="fade-in-left"
+                    data-delay="3.5s"
+                    >View Projects <i class="arrow_right"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %} 
+  
+  
+</div>
+
+{% include "indico/about1.html" %}
+
+{% include "indico/service-section.html" %}
+
+
+{% include "indico/work-pro-section.html" %}
+{% include "indico/projects-section.html" %}
+
+
+<div class="cta-section padding">
+  <div class="container">
+    <div class="cta-content text-center">
+      <span class="wow fadeInUp">Explore The Features</span>
+      <h2 class="wow fadeInUp" data-wow-delay="300ms">
+        The best constructions <br />company since 1985
+      </h2>
+      <a href="#" class="default-btn wow fadeInUp" data-wow-delay="500ms"
+        >Get Free Quote</a
+      >
+    </div>
+  </div>
+</div>
+{% include "indico/content-section.html" %}
+{% include "indico/testimonial-section.html" %}
+{% include "indico/blog-section.html" %}
+
+
+<div class="sponsor-section bg-grey">
+  <div class="dots"></div>
+  <div class="container">
+{% include "indico/sponsor-section.html" %}
+
+</div>
+</div>
+
+
+
+{% include "indico/footer.html" %}
+
+{% comment %} <footer class="footer-section align-center">
+  <div class="container">
+    <p><a href="templateshub.net">Templates Hub</a></p>
+  </div>
+</footer>
+<a data-scroll href="#header" id="scroll-to-top"
+  ><i class="arrow_carrot-up"></i
+></a> {% endcomment %}
+
+{% endblock content %}
+
+   
+<!--[if lt IE 8]>
+  <p class="browserupgrade">
+    You are using an <strong>outdated</strong> browser. Please
+    <a href="http://browsehappy.com/">upgrade your browser</a> to improve your
+    experience.
+  </p>
+<![endif]-->
+
+{% block js_file %}
+<script src="{% static 'indico/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js' %}"></script>
+<script
+  data-cfasync="false"
+  src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js'"
+></script>
+<script src="{% static 'indico/js/vendor/jquery-1.12.4.min.js' %}"></script>
+
+<script src="{% static 'indico/js/vendor/bootstrap.min.js' %}"></script>
+
+<script src="{% static 'indico/js/vendor/tether.min.js' %}"></script>
+
+<script src="{% static 'indico/js/vendor/headroom.min.js' %}"></script>
+
+<script src="{% static 'indico/js/vendor/owl.carousel.min.js' %}"></script>
+
+<script src="{% static 'indico/js/vendor/smooth-scroll.min.js' %}"></script>
+
+<script src="{% static 'indico/js/vendor/venobox.min.js' %}"></script>
+
+<script src="{% static 'indico/js/vendor/jquery.ajaxchimp.min.js' %}"></script>
+
+<script src="{% static 'indico/js/vendor/slick.min.js' %}"></script>
+
+<script src="{% static 'indico/js/vendor/waypoints.min.js' %}"></script>
+
+<script src="{% static 'indico/js/vendor/odometer.min.js' %}"></script>
+
+<script src="{% static 'indico/js/vendor/wow.min.js' %}"></script>
+
+<script src="{% static 'indico/js/main.js' %}"></script>
+{% endblock js_file %}
+
+<!-- index.html  29 Nov 2019 03:30:38 GMT -->

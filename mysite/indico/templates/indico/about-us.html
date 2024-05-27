@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+<title>Indico | Construction & Building HTML Template</title>
+{% endblock title %}
+
+{% block css_file %}
+{% include "indico/css.html" %}
+{% endblock css_file %}
+
+{% block content %}
+<div class="site-preloader-wrap">
+  <div class="spinner"></div>
+</div>
+
+<!-- Include header once at the top -->
+{% include "indico/header.html" %}
+
+<section class="page-header padding">
+  <div class="container">
+    <div class="page-content text-center">
+      <h2>About us</h2>
+      <p>Construction & Building Html Template.</p>
+    </div>
+  </div>
+</section>
+
+{% include "indico/about1.html" %}
+{% include "indico/work-pro-section.html" %}
+{% include "indico/content-section.html" %}
+{% include "indico/testimonial-section.html" %}
+<div class="sponsor-section">
+  <div class="container">
+  {% include "indico/sponsor-section.html" %}
+</div>
+</div>
+{% include "indico/footer.html" %}
+
+{% endblock content %}
+
+{% block js_file %}
+{% include "indico/js.html" %}
+{% endblock js_file %}
